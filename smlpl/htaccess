@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteRule ^inc/.*$ products.php?id=$1
+RewriteCond %{REQUEST_FILENAME} \.(gif|jpe?g|png|js|css|swf|php|ico|txt|pdf|xml)$ [OR]
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -l
+RewriteRule ^([^/.]+)/?$ products.php?id=$1 [QSA,L]
+
+
+
